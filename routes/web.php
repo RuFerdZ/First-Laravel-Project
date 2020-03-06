@@ -25,7 +25,29 @@ Route::get('/contact', function () {
     return view('Quiz.contact');
 });
 
-
+//passing single parameter
 Route::get('/about', function () {
-    return view('Quiz.about');
+    $names = ["Rusiru","Hasani"];
+    return view('Quiz.about',["contacts"=>$names]);
 });
+
+//if sendind parameters
+Route::get('/new', function () {
+    $names = ["Rusiru","Hasani"];
+    return view('Quiz.new',["contacts"=>$names,"title"=>"New Page"]);
+});
+
+
+//if sending many parameters
+Route::get('/compact', function () {
+    $names = ["Rusiru","Hasani"];
+    $title = "Compact Page";
+    return view('Quiz.compact',compact("names","title"));
+});
+
+//single line routing - controller based
+Route::get('/controllerbased','CustomersController@list');
+
+
+Route::view('/','home.index');
+

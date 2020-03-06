@@ -1,3 +1,6 @@
+
+<h1>{{$title}}</h1>
+<br>
 @extends('Quiz.master')
 
 @section('content')

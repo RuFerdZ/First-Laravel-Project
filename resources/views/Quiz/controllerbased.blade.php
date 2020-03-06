@@ -1,9 +1,13 @@
+
+<br>
 @extends('Quiz.master')
 
 @section('content')
 
+<h1>Controller based</h1>
+
 <ul>
-@foreach($contacts as $item)
+@foreach($names as $item)
     <li>{{$item}}</li>
 @endforeach
 </ul>
