@@ -1,0 +1,42 @@
+//invoke tinker shell
+php artisan tinker
+
+make model and migrate
+php artisan make:model Student -m
+
+
+
+//Commands
+php artisan migrate
+php artisan migrate:rollback
+
+//tinker Commands
+$student = new Student();
+$student->name="saman";
+$student->save()
+
+or
+
+$student = new Student(["name"=>"john"]);
+$student->save()
+
+or
+
+Student::insert([["name"=>"Hasani"],["name"=>"Roylin"]]);
+Student::all();
+
+or
+
+App\Student::insert(["name"=>"jane"]);
+
+or
+
+DB::table('students')->insert(['name'=>'meera']);
+
+or
+
+DB::insert('insert into students(name) values(?)',['Kamal']);
+
+
+//import driver for mySQL
+composer require doctrine/dbal
